@@ -2,6 +2,7 @@ package sg.edu.rp.id19037610.demolistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, selectedFood.getName() + " Star: "
                 + selectedFood.isStar(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(MainActivity.this, Activity2.class);
+                intent.putExtra(Intent.EXTRA_TEXT, selectedFood.getName());
+                startActivity(intent);
             }
         });
     }
